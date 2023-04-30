@@ -8,8 +8,11 @@ function SearchResultList({ results }) {
         <div className="search-result-container">
             <div className="sub-container">
                 <div className="content-box">
-                    {results?.map((result) => (
-                        <div className="result">
+                    {results?.map((result, index) => (
+                        <div
+                            className="result"
+                            key={index}
+                        >
                             <div className="result-image">
                                 <img
                                     src={result?.thumbnail}

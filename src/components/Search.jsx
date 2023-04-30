@@ -30,7 +30,12 @@ function Search() {
     };
 
     useEffect(() => {
-        fetchData();
+        const fetchProfucts = setTimeout(() => {
+            fetchData();
+        }, 400);
+        return () => {
+            clearTimeout(fetchProfucts);
+        };
     }, [query]);
 
     return (
